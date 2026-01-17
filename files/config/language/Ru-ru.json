@@ -1,0 +1,43 @@
+{
+    "main-body": {},
+    "telegram-bot": {
+        "button": {
+            "help": "Помощь",
+            "info": "O проекте",
+            "program": "Программа",
+            "wiki": "Инструкция",
+            "git": "GitHub",
+            "activate": "Включить программу",
+            "deactivate": "Выключить программу",
+            "site-add": "Добавить сайт",
+            "site-delete": "Удалить сайт",
+            "site-list": "Список сайтов"
+        },
+        "start-message": "Привет, <user>! Я <bot_name>, воспользуйся кнопками ниже.",
+        "help-message": "Это меню помощи, воспользуйся кнопками ниже!",
+        "info-message": "Можете ознакомиться с инстуркцией по кнопке ниже. Ссылка на гит хаб: <git>",
+        "git-message": "Ссылка на гит хаб: <git>",
+        "program-message": "Используйте кнопки!",
+        "status-text-activate": "✅ Программа запущена",
+        "status-text-deactivate": "❌ Программа остановлена",
+        "status-text-error": "Ошибка! Программа уже <status>",
+        "waiting-site-text": "Отправте ссылку на сайт: ",
+        "waiting-site-delete-text": "Удаление сайта из списка\nВыберете сайт из списка ниже для его удаления",
+        "status-text-delete-true": "Сайт <site> успешно удален из списка!",
+        "status-text-site-list": "Список сайтов ниже\nДля выхода нажмите на любую кнопку",
+        "status-text-site-add": "Сайт <site> успешно добавлен в список!",
+
+        "progress-help-message": "Помощь",
+        "progress-info-message": "Информация",
+        "progress-git-message": "Git",
+        "progress-program-message": "Меню программы", 
+        "progress-start-message": "Программа запущена!",
+        "progress-stop-message": "Программа остановлена!",
+        "progress-error-message": "Ошибка",
+        "progress-waiting-message": "Добавить сайт",
+        "progress-delete-message": "Удаление сайта",
+        "progress-delete-site": "Успешно!",
+        "progress-site-list": "Список сайтов"
+    },
+    "other": {}
+}

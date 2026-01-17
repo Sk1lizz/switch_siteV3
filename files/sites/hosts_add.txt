@@ -1,0 +1,22 @@
+
+
+#Site (authedu.mosreg.ru) blocked by skilizz.
+0.0.0.0 authedu.mosreg.ru
+
+#Site (translate.google.com) blocked by skilizz.
+0.0.0.0 translate.google.com
+
+#Site (ok.ru) blocked by skilizz.
+0.0.0.0 ok.ru
+
+#Site (mosreg.ru) blocked by skilizz.
+0.0.0.0 mosreg.ru
+
+#Site (web.whatsapp.com) blocked by skilizz.
+0.0.0.0 web.whatsapp.com
+
+#Site (insperia.ru) blocked by skilizz.
+0.0.0.0 insperia.ru
+
+#Site (icons8.ru) blocked by skilizz.
+0.0.0.0 icons8.ru

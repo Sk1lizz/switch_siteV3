@@ -1,0 +1,11 @@
+{
+    "name": "Switch Site",
+    "version": "v3-codding",
+    "creator": "skilizz",
+    "ip-block": "0.0.0.0",
+    "bot-telegram": false, 
+    "app": false,
+    "console": true,
+    "language": "RU-ru",
+    "path": "None"
+}
