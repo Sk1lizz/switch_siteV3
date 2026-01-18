@@ -1,10 +1,13 @@
 import sys
 
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtGui import QIcon
 from design import Ui_MainWindow
 
 from switch import switch_on, switch_off, switch_add, switch_delete, filter_site
 import switch 
+
+import config as cfg
 
 sitelist_i = []
 
@@ -27,10 +30,15 @@ class Program(QMainWindow):
         self.ui.setupUi(self)
         self.site_list()
 
+        self.ui.add_site.setText(cfg.btn_add_site)
+        self.ui.add_site.setShortcut("RETURN")
+
         if self.get_program():
-                self.ui.btn_adctivate.setText("Выключить программу")
+                self.ui.btn_adctivate.setText(cfg.btn_deactivate)
+        self.ui.btn_adctivate.setText(cfg.btn_activate)
+        self.ui.btn_list_site.setText(cfg.btn_update_list)
         
-        if len(self.sitelist) > 5:   self.ui.btn_next_page.setEnabled(True)
+        if len(self.sitelist) > 5:   self.ui.btn_next_page.setEnabled(True) 
         self.ui.btn_become_page.setEnabled(False)
 
         self.ui.add_site.clicked.connect(self.add_site_list)
@@ -46,11 +54,11 @@ class Program(QMainWindow):
     
     def add_site_list(self) -> None:
         if self.ui.le_site_rq.text() != "":
-            print(self.ui.le_site_rq.text())
+            #print(self.ui.le_site_rq.text())
             site = self.ui.le_site_rq.text()
             self.ui.le_site_rq.setText("")
             
-            print(switch_add(site))
+            #print(switch_add(site))
 
             self.sitelist.append(filter_site(site))
 
@@ -80,7 +88,7 @@ class Program(QMainWindow):
                     list_i[f"{count+1}"] = ""
                     count += 1
                     self.ui.btn_next_page.setEnabled(False)
-        print(list_i)
+        #print(list_i)
         self.ui.lbl_site_list_1.setText(list_i["1"])
         self.ui.lbl_site_list_2.setText(list_i["2"])
         self.ui.lbl_site_list_3.setText(list_i["3"])
@@ -100,7 +108,7 @@ class Program(QMainWindow):
             self.ui.btn_delete_site_5.setEnabled(False)
 
         elif list_i["2"] == "":
-            self.ui.btn_delete_site_1.setText("Удалить сайт")
+            self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
             self.ui.btn_delete_site_2.setText("")
             self.ui.btn_delete_site_3.setText("")
             self.ui.btn_delete_site_4.setText("")
@@ -113,8 +121,8 @@ class Program(QMainWindow):
             self.ui.btn_delete_site_5.setEnabled(False)
 
         elif list_i["3"] == "":
-            self.ui.btn_delete_site_1.setText("Удалить сайт")
-            self.ui.btn_delete_site_2.setText("Удалить сайт")
+            self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
             self.ui.btn_delete_site_3.setText("")
             self.ui.btn_delete_site_4.setText("")
             self.ui.btn_delete_site_5.setText("")
@@ -126,9 +134,9 @@ class Program(QMainWindow):
             self.ui.btn_delete_site_5.setEnabled(False)
             
         elif list_i["4"] == "":
-            self.ui.btn_delete_site_1.setText("Удалить сайт")
-            self.ui.btn_delete_site_2.setText("Удалить сайт")
-            self.ui.btn_delete_site_3.setText("Удалить сайт")
+            self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
             self.ui.btn_delete_site_4.setText("")
             self.ui.btn_delete_site_5.setText("")
 
@@ -140,10 +148,10 @@ class Program(QMainWindow):
             
                 
         elif list_i["5"] == "":
-            self.ui.btn_delete_site_1.setText("Удалить сайт")
-            self.ui.btn_delete_site_2.setText("Удалить сайт")
-            self.ui.btn_delete_site_3.setText("Удалить сайт")
-            self.ui.btn_delete_site_4.setText("Удалить сайт")
+            self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_4.setText(cfg.btn_delete_site)
             self.ui.btn_delete_site_5.setText("")
                 
             self.ui.btn_delete_site_1.setEnabled(True)
@@ -153,11 +161,11 @@ class Program(QMainWindow):
             self.ui.btn_delete_site_5.setEnabled(False)
             
         else: 
-            self.ui.btn_delete_site_1.setText("Удалить сайт")
-            self.ui.btn_delete_site_2.setText("Удалить сайт")
-            self.ui.btn_delete_site_3.setText("Удалить сайт")
-            self.ui.btn_delete_site_4.setText("Удалить сайт")
-            self.ui.btn_delete_site_5.setText("Удалить сайт")
+            self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_4.setText(cfg.btn_delete_site)
+            self.ui.btn_delete_site_5.setText(cfg.btn_delete_site)
 
             self.ui.btn_delete_site_1.setEnabled(True)
             self.ui.btn_delete_site_2.setEnabled(True)
@@ -168,7 +176,7 @@ class Program(QMainWindow):
         self.page = 1
     
     def set_site(self, page: int) -> None:
-        print("2", self.sitelist)
+        #print("2", self.sitelist)
         if page >= 1:
             list_i = {}
             first_int = page*5 - 4
@@ -197,7 +205,7 @@ class Program(QMainWindow):
                         list_i[f"{count+1}"] = ""
                         count += 1
                         self.ui.btn_next_page.setEnabled(False)
-            print(list_i)
+            #print(list_i)
             self.ui.lbl_site_list_1.setText(list_i["1"])
             self.ui.lbl_site_list_2.setText(list_i["2"])
             self.ui.lbl_site_list_3.setText(list_i["3"])
@@ -217,7 +225,7 @@ class Program(QMainWindow):
                 self.ui.btn_delete_site_5.setEnabled(False)
 
             elif list_i["2"] == "":
-                self.ui.btn_delete_site_1.setText("Удалить сайт")
+                self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
                 self.ui.btn_delete_site_2.setText("")
                 self.ui.btn_delete_site_3.setText("")
                 self.ui.btn_delete_site_4.setText("")
@@ -230,8 +238,8 @@ class Program(QMainWindow):
                 self.ui.btn_delete_site_5.setEnabled(False)
 
             elif list_i["3"] == "":
-                self.ui.btn_delete_site_1.setText("Удалить сайт")
-                self.ui.btn_delete_site_2.setText("Удалить сайт")
+                self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
                 self.ui.btn_delete_site_3.setText("")
                 self.ui.btn_delete_site_4.setText("")
                 self.ui.btn_delete_site_5.setText("")
@@ -243,9 +251,9 @@ class Program(QMainWindow):
                 self.ui.btn_delete_site_5.setEnabled(False)
             
             elif list_i["4"] == "":
-                self.ui.btn_delete_site_1.setText("Удалить сайт")
-                self.ui.btn_delete_site_2.setText("Удалить сайт")
-                self.ui.btn_delete_site_3.setText("Удалить сайт")
+                self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
                 self.ui.btn_delete_site_4.setText("")
                 self.ui.btn_delete_site_5.setText("")
 
@@ -257,10 +265,10 @@ class Program(QMainWindow):
             
                 
             elif list_i["5"] == "":
-                self.ui.btn_delete_site_1.setText("Удалить сайт")
-                self.ui.btn_delete_site_2.setText("Удалить сайт")
-                self.ui.btn_delete_site_3.setText("Удалить сайт")
-                self.ui.btn_delete_site_4.setText("Удалить сайт")
+                self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_4.setText(cfg.btn_delete_site)
                 self.ui.btn_delete_site_5.setText("")
                 
                 self.ui.btn_delete_site_1.setEnabled(True)
@@ -270,11 +278,11 @@ class Program(QMainWindow):
                 self.ui.btn_delete_site_5.setEnabled(False)
             
             else: 
-                self.ui.btn_delete_site_1.setText("Удалить сайт")
-                self.ui.btn_delete_site_2.setText("Удалить сайт")
-                self.ui.btn_delete_site_3.setText("Удалить сайт")
-                self.ui.btn_delete_site_4.setText("Удалить сайт")
-                self.ui.btn_delete_site_5.setText("Удалить сайт")
+                self.ui.btn_delete_site_1.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_2.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_3.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_4.setText(cfg.btn_delete_site)
+                self.ui.btn_delete_site_5.setText(cfg.btn_delete_site)
 
                 self.ui.btn_delete_site_1.setEnabled(True)
                 self.ui.btn_delete_site_2.setEnabled(True)
@@ -284,7 +292,7 @@ class Program(QMainWindow):
     
     def delete_site(self, page: int, number: int) -> None:
         site_number = (page-1)*5+number
-        print(switch_delete(self.sitelist[site_number-1]))
+        switch_delete(self.sitelist[site_number-1])
         self.update_list(1)
     
     def update_list(self, page: int) -> None:
@@ -296,7 +304,7 @@ class Program(QMainWindow):
             for i in range(1, (len(sitelist_split)-1)):
                 sitelist_i.append(sitelist_split[i])
             self.sitelist = sitelist_i
-            print("1:", self.sitelist)
+            #print("1:", self.sitelist)
             self.set_site(page=page)
 
     def get_program(self) -> bool:
@@ -309,15 +317,15 @@ class Program(QMainWindow):
     
     def program(self) -> None:
         if (self.get_program()):
-            print(switch_off())
-            self.ui.btn_adctivate.setText("Включить программу")
-            print(self.get_program())
-            print()
+            switch_off()
+            self.ui.btn_adctivate.setText(cfg.btn_activate)
+            #print(self.get_program())
+            #print()
         else:
-            print(switch_on()) 
-            self.ui.btn_adctivate.setText("Выключить программу")
-            print(self.get_program())
-            print()
+            switch_on()
+            self.ui.btn_adctivate.setText(cfg.btn_deactivate)
+            #print(self.get_program())
+            #print()
 
 app = QApplication(sys.argv)
 

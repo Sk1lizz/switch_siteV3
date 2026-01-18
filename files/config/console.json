@@ -1,4 +1,5 @@
 {
     "name": "Switch Site",
-    "font": "slant"
+    "font": "slant",
+    "check_version": true
 }
