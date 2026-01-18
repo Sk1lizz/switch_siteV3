@@ -1,5 +1,17 @@
 {
-    "main-body": {},
+    "main-body": {
+        "version": {
+            "version-false": "Данная версия устарела. Ваша версия (<old_version>) не совпадает с версией (<new_version>) с гит хаба. Ссылка на гит хаб: <git>",
+            "version-error": "Ошибка. Ваша версия (<version>). Возможно не уставнолены необходимые все пакеты (<packages>) или нет интернет соединение."
+        },
+        "main_menu": "Начальное меню.",
+        "switch_menu": "Меню программы.",
+        "wiki_menu": "Инструкция.",
+        "help_menu": "Помощь.",
+        "info_menu": "Информация.",
+        "exit": "Выход.",
+        "end": "Выключение."
+    }, 
     "telegram-bot": {
         "button": {
             "help": "Помощь",
@@ -38,6 +50,13 @@
         "progress-delete-message": "Удаление сайта",
         "progress-delete-site": "Успешно!",
         "progress-site-list": "Список сайтов"
+    },
+    "program": {
+        "add-site": "Добавить сайт",
+        "delete-site": "Удалить сайт",
+        "update-list": "Обновить список сайтов",
+        "activate": "Включить программу",
+        "deactivate": "Выключить программу"
     },
     "other": {}
 }

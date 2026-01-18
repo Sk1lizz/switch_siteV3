@@ -79,5 +79,19 @@ progress_site_list = data_tg["progress-site-list"]
 
 git = "https://github.com/Sk1lizz/switch_site"
 
+
 font = data_console["font"]
 name_console = data_console["name"]
+
+# Сообщение из консоли
+version_message = data_lang["main-body"]["version"]
+version_false = version_message["version-false"]
+version_error = version_message["version-error"]
+
+# Текст из приложения
+program_lang = data_lang["program"]
+btn_add_site = program_lang["add-site"]
+btn_delete_site = program_lang["delete-site"]
+btn_update_list = program_lang["update-list"]
+btn_activate = program_lang["activate"]
+btn_deactivate = program_lang["deactivate"]
