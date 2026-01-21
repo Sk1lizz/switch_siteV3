@@ -1,7 +1,12 @@
 import config as cfg
 
+from switch import switch_add, switch_delete, switch_off, switch_on, site_list
+
 try:
+
+    from pyfiglet import figlet_format
     FONT = cfg.font
+    __test_text = figlet_format(text="TEST", font=FONT)
 except:
     FONT = "slant"
 
@@ -14,6 +19,7 @@ def chech_version() -> bool | str:
 
         URL = r"https://github.com/Sk1lizz/switch_siteV3/blob/main/files/config/config.json"
 
+    
         r = requests.get(URL)
 
         soup = bs(r.text, "html.parser")
@@ -35,30 +41,65 @@ def chech_version() -> bool | str:
 
 def get_version() -> str | None:
     if bool(chech_version() == "Error"):
-        text = (cfg.version_error).replace("<version>", f"{cfg.version}").replace("<packages>", "requests, bs4")
+        text = (cfg.version_error).replace("<version>", f"{cfg.version}")\
+            .replace("<packages>", "requests, bs4")
         return text
     elif bool(chech_version() == True):
         return None
     else:
-        text = (cfg.version_false).replace("<old_version>", cfg.version).replace("<new_version>", f"{chech_version()}").replace("<git>", f"{cfg.git}")
+        text = (cfg.version_false).replace("<old_version>", cfg.version)\
+            .replace("<new_version>", f"{chech_version()}")\
+                .replace("<git>", f"{cfg.git}")
         return text
 
 def main_menu() -> None:
     try:
         from pyfiglet import figlet_format
         
-
         text_main = figlet_format(text=f"{cfg.name_console}", font=FONT)
     except:
-        text_main = f"{cfg.name_console}"
+        text_main = f"\n{cfg.name_console}\n"
 
-    
-    text_body = """<2> - <switch_menu>\n<3> - <wiki_menu>\n<8> - <help_menu>\n<9> - <info_menu>\n<0> - <exit>"""
+    text_body = ("""<2> - <switch_menu>\n<3> - <wiki_menu>\n<8> - <help_menu>\n<9> - <info_menu>\n<0> - <exit>""")\
+        .replace("<switch_menu>", cfg.switch_menu_message).replace("<wiki_menu>", cfg.wiki_menu_message)\
+            .replace("<help_menu>", cfg.help_menu_message).replace("<info_menu>", cfg.info_menu_message)\
+                .replace("<exit>", cfg.exit_message)
+
+    text = f"{text_main}\n{text_body}"
+
+    print(text)
+
+main_menu()
 
 
 def switch_menu()-> None:
-    pass
+    try:
+        from pyfiglet import figlet_format
+        
+        text_main = figlet_format(text=f"{cfg.name_console}", font=FONT)
+    except:
+        text_main = f"\n{cfg.name_console}\n"
 
+    text_body = ("""<1> - <switch_on>\n<2> - <switch_off>\n<3> - <site_add>\n<4> - <site_delete>\n<5> - <site_list>\n<0> - <exit>""")\
+        .replace("<switch_on>", cfg.switch_on_message).replace("<switch_off>", cfg.switch_off_message)\
+            .replace("<site_add>", cfg.switch_add_message).replace("<site_delete>", cfg.switch_delete_message)\
+                .replace("<site_list>", cfg.switch_list_message).replace("<exit>", cfg.exit_message)
+
+    text = f"{text_main}\n{text_body}"
+
+    print(text)
+
+    while True:
+        rq = input(cfg.request_message)
+
+        match rq:
+            case "0":
+                break
+            case "1":
+                if switch_on():
+                    print(cfg.activate_message)
+
+print(switch_menu())
 
 def wiki_menu() -> None:
     pass

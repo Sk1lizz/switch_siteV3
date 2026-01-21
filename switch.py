@@ -187,6 +187,11 @@ def switch_delete(site: str) -> bool: # Удаление сайта из спи�
         with open(path_to_jsonfile, "w+", encoding='utf-8') as file:
             json.dump(data, file, indent=4)
 
+        """Проверка состояния программы и перезапуск, если это необходимо"""
+        if state_edit(state=False):
+            switch_off()
+            switch_on()
+
         return "True"
     
     except Exception as e:

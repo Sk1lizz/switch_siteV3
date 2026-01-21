@@ -33,9 +33,12 @@ class Program(QMainWindow):
         self.ui.add_site.setText(cfg.btn_add_site)
         self.ui.add_site.setShortcut("RETURN")
 
-        if self.get_program():
-                self.ui.btn_adctivate.setText(cfg.btn_deactivate)
         self.ui.btn_adctivate.setText(cfg.btn_activate)
+
+        
+        if self.get_program():
+            self.ui.btn_adctivate.setText(cfg.btn_deactivate)
+
         self.ui.btn_list_site.setText(cfg.btn_update_list)
         
         if len(self.sitelist) > 5:   self.ui.btn_next_page.setEnabled(True) 

@@ -1,2 +1,5 @@
 .env
 __pycache__
+
+main_program.py
+main_program.exe

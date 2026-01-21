@@ -84,9 +84,30 @@ font = data_console["font"]
 name_console = data_console["name"]
 
 # Сообщение из консоли
-version_message = data_lang["main-body"]["version"]
+data_message_console = data_lang["main-body"]
+
+version_message = data_message_console["version"]
 version_false = version_message["version-false"]
 version_error = version_message["version-error"]
+
+console_message = data_message_console
+main_menu_message = console_message["main-menu"]
+switch_menu_message = console_message["switch-menu"]
+wiki_menu_message = console_message["wiki-menu"]
+help_menu_message = console_message["help-menu"]
+info_menu_message = console_message["info-menu"]
+exit_message = console_message["exit"]
+end_message = console_message["end"]
+request_message = console_message["request"]
+
+
+switch_menu = data_message_console["switch-menu-message"]
+
+switch_on_message = switch_menu["switch-on"]
+switch_off_message = switch_menu["switch-off"]
+switch_add_message = switch_menu["site-add"]
+switch_delete_message = switch_menu["site-delete"]
+switch_list_message = switch_menu["site-list"]
 
 # Текст из приложения
 program_lang = data_lang["program"]
