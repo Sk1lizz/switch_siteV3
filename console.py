@@ -1,6 +1,6 @@
 import config as cfg
 
-from switch import switch_add, switch_delete, switch_off, switch_on, site_list
+from switch import switch_add, switch_delete, switch_off, switch_on, site_list, filter_site
 
 try:
 
@@ -69,7 +69,6 @@ def main_menu() -> None:
 
     print(text)
 
-main_menu()
 
 
 def switch_menu()-> None:
@@ -85,21 +84,48 @@ def switch_menu()-> None:
             .replace("<site_add>", cfg.switch_add_message).replace("<site_delete>", cfg.switch_delete_message)\
                 .replace("<site_list>", cfg.switch_list_message).replace("<exit>", cfg.exit_message)
 
-    text = f"{text_main}\n{text_body}"
+    TEXT = f"{text_main}\n{text_body}"
 
-    print(text)
+    print(TEXT)
 
     while True:
         rq = input(cfg.request_message)
 
         match rq:
-            case "0":
-                break
             case "1":
                 if switch_on():
-                    print(cfg.activate_message)
+                    print(cfg.switch_on_console)
+                else:
+                    print(cfg.error_activate)
+            case "2":
+                if switch_off():
+                    print(cfg.switch_off_console)
+                else:
+                    print(cfg.error_deactivate)
+            case "3":
+                site = input(cfg.site_input)
+                if switch_add(site):
+                    text = str(cfg.switch_add_console).replace("<site>", f"{filter_site(site)}")
+                    print(text)
+                else:
+                    print(cfg.error_site)
+            case "4":
+                site = input(cfg.site_input)
+                if switch_delete(site):
+                    text = str(cfg.switch_delete_console).replace("<site>", f"{filter_site(site)}")
+                    print(text)
+                else:
+                    print(cfg.error_site)
+            case "5":
+                text = f"{cfg.site_list_console}\n{site_list()}"
+                print(text)
+            case "0":
+                print(cfg.exit_message)
+                break
+                
+        print(TEXT)
 
-print(switch_menu())
+switch_menu()
 
 def wiki_menu() -> None:
     pass

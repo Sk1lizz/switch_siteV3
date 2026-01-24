@@ -101,13 +101,27 @@ end_message = console_message["end"]
 request_message = console_message["request"]
 
 
-switch_menu = data_message_console["switch-menu-message"]
 
-switch_on_message = switch_menu["switch-on"]
-switch_off_message = switch_menu["switch-off"]
-switch_add_message = switch_menu["site-add"]
-switch_delete_message = switch_menu["site-delete"]
-switch_list_message = switch_menu["site-list"]
+switch_menu_setting = data_message_console["switch-menu-message"]
+
+switch_on_message = switch_menu_setting["switch-on"]
+switch_off_message = switch_menu_setting["switch-off"]
+switch_add_message = switch_menu_setting["site-add"]
+switch_delete_message = switch_menu_setting["site-delete"]
+switch_list_message = switch_menu_setting["site-list"]
+
+
+switch_menu = data_message_console["switch-message"]
+
+switch_on_console = switch_menu["switch-on"]
+switch_off_console = switch_menu["switch-off"]
+switch_add_console = switch_menu["switch-add"]
+switch_delete_console = switch_menu["switch-delete"]
+site_list_console = switch_menu["site-list"]
+error_activate = switch_menu["error-activate"]
+error_deactivate = switch_menu["error-deactivate"]
+site_input = switch_menu["site-input"]
+error_site = switch_menu["error-site"]
 
 # Текст из приложения
 program_lang = data_lang["program"]
