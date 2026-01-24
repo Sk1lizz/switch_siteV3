@@ -92,16 +92,22 @@ def switch_menu()-> None:
         rq = input(cfg.request_message)
 
         match rq:
+            case "0":
+                print(cfg.exit_message)
+                break
+
             case "1":
                 if switch_on():
                     print(cfg.switch_on_console)
                 else:
                     print(cfg.error_activate)
+
             case "2":
                 if switch_off():
                     print(cfg.switch_off_console)
                 else:
                     print(cfg.error_deactivate)
+
             case "3":
                 site = input(cfg.site_input)
                 if switch_add(site):
@@ -109,6 +115,7 @@ def switch_menu()-> None:
                     print(text)
                 else:
                     print(cfg.error_site)
+
             case "4":
                 site = input(cfg.site_input)
                 if switch_delete(site):
@@ -116,16 +123,14 @@ def switch_menu()-> None:
                     print(text)
                 else:
                     print(cfg.error_site)
+
             case "5":
                 text = f"{cfg.site_list_console}\n{site_list()}"
                 print(text)
-            case "0":
-                print(cfg.exit_message)
-                break
                 
-        print(TEXT)
+        
+        print("\n\n", TEXT)
 
-switch_menu()
 
 def wiki_menu() -> None:
     pass

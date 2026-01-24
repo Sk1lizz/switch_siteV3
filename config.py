@@ -90,6 +90,7 @@ version_message = data_message_console["version"]
 version_false = version_message["version-false"]
 version_error = version_message["version-error"]
 
+
 console_message = data_message_console
 main_menu_message = console_message["main-menu"]
 switch_menu_message = console_message["switch-menu"]
@@ -99,7 +100,6 @@ info_menu_message = console_message["info-menu"]
 exit_message = console_message["exit"]
 end_message = console_message["end"]
 request_message = console_message["request"]
-
 
 
 switch_menu_setting = data_message_console["switch-menu-message"]
