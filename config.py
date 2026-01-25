@@ -25,6 +25,8 @@ except:
 TOKEN = data_bot["token"]
 name_bot = data_bot["name"]
 
+wiki_link = r"https://sk1lizz.gitbook.io/switch-site-docs/"
+
 IP_BLOCK = data_config["ip-block"]
 enable_bot = data_config["bot-telegram"]
 enable_app = data_config["app"]
@@ -54,6 +56,7 @@ button_site_list = button["site-list"]
 start_message = data_tg["start-message"]
 help_message = data_tg["help-message"]
 info_message = data_tg["info-message"]
+wiki_message = data_tg["wiki-message"]
 git_message = data_tg["git-message"]
 program_message = data_tg["program-message"]
 status_text_activate = data_tg["status-text-activate"]
@@ -76,6 +79,7 @@ progress_waiting_message = data_tg["progress-waiting-message"]
 progress_delete_message = data_tg["progress-delete-message"]
 progress_delete_site = data_tg["progress-delete-site"]
 progress_site_list = data_tg["progress-site-list"]
+progress_wiki_message = data_tg["progress-wiki-message"]
 
 git = "https://github.com/Sk1lizz/switch_site"
 
@@ -122,6 +126,12 @@ error_activate = switch_menu["error-activate"]
 error_deactivate = switch_menu["error-deactivate"]
 site_input = switch_menu["site-input"]
 error_site = switch_menu["error-site"]
+
+info_menu_console = data_message_console["info-menu-message"]
+name_message_console = info_menu_console["name"]
+version_message_console = info_menu_console["version"]
+creator_message_console = info_menu_console["creator"]
+language_message_console = info_menu_console["language"]
 
 # Текст из приложения
 program_lang = data_lang["program"]

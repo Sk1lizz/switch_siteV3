@@ -22,6 +22,12 @@
             "site-input": "Введите сайт: ",
             "error-site": "Упс. Произошла ошибка."
         },
+        "info-menu-message": {
+            "name": "Название программы",
+            "version": "Версия программы",
+            "creator": "Создатель",
+            "language": "Язык"
+        },
         "main-menu": "Начальное меню.",
         "switch-menu": "Меню программы.",
         "wiki-menu": "Инструкция.",
@@ -47,6 +53,7 @@
         "start-message": "Привет, <user>! Я <bot_name>, воспользуйся кнопками ниже.",
         "help-message": "Это меню помощи, воспользуйся кнопками ниже!",
         "info-message": "Можете ознакомиться с инстуркцией по кнопке ниже. Ссылка на гит хаб: <git>",
+        "wiki-message": "Ссылка на wiki: <wiki>",
         "git-message": "Ссылка на гит хаб: <git>",
         "program-message": "Используйте кнопки!",
         "status-text-activate": "✅ Программа запущена",
@@ -60,6 +67,7 @@
 
         "progress-help-message": "Помощь",
         "progress-info-message": "Информация",
+        "progress-wiki-message": "Инструкция",
         "progress-git-message": "Git",
         "progress-program-message": "Меню программы", 
         "progress-start-message": "Программа запущена!",

@@ -133,7 +133,9 @@ def switch_menu()-> None:
 
 
 def wiki_menu() -> None:
-    pass
+    wiki = cfg.wiki_link
+
+    print(wiki)
 
 
 def help_menu() -> None:
@@ -141,4 +143,19 @@ def help_menu() -> None:
 
 
 def info_menu() -> None:
-    pass
+    try:
+        from pyfiglet import figlet_format
+        
+        text_main = figlet_format(text=f"{cfg.name_console}", font=FONT)
+    except:
+        text_main = f"\n        {cfg.name_console}\n"
+
+    text_body = """\n---------Info---------\n\n<name> - <name_program>\n<version> - <version_program>\n<creator> - <creator_program>\n<language> - <language_program>\n\n--------Info----------"""\
+        .replace("<name_program>", cfg.name_console).replace("<version_program>", cfg.version)\
+            .replace("<creator_program>", cfg.creator).replace("<language_program>", cfg.lang)\
+                .replace("<name>", cfg.name_message_console).replace("<version>", cfg.version_message_console)\
+                    .replace("<creator>", cfg.creator_message_console).replace("<language>", cfg.language_message_console)
+
+    print(text_main, text_body)
+
+# main_menu()

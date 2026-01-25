@@ -61,7 +61,7 @@ class Program(QMainWindow):
             site = self.ui.le_site_rq.text()
             self.ui.le_site_rq.setText("")
             
-            #print(switch_add(site))
+            switch_add(site)
 
             self.sitelist.append(filter_site(site))
 

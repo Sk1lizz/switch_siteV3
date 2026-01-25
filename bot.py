@@ -94,7 +94,10 @@ async def git_callback(callback: CallbackQuery) -> None:
 
 @dp.callback_query(lambda c: c.data in ["help:wiki"])
 async def wiki_callback(callback: CallbackQuery) -> None:
-    pass
+    text_message = str(cfg.wiki_message).replace("<wiki>", cfg.wiki_link)
+    text_progress = cfg.progress_wiki_message
+    await callback.answer(text=text_progress)
+    await callback.message.edit_text(text=text_message, reply_markup=kb.main_keyboard.as_markup())
 
 
 @dp.callback_query(lambda c: c.data in ["main:program"])
