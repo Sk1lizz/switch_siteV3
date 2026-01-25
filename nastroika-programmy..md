@@ -163,7 +163,7 @@ name - название.
 
 font - шрифт для pyfiglet.
 
-check\_version - проверка обновления. <mark style="background-color:$danger;">Лучше не изменять.\\</mark>
+check\_version - проверка обновления. <mark style="background-color:$danger;">Лучше не изменять.</mark>
 
 
 
