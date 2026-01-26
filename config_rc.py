@@ -5,6 +5,8 @@
 
 from PySide6 import QtCore
 
+# __version__ = "v3.0.1 | 26.01.2026"
+
 qt_resource_data = b"\
 \x00\x00\x02\xbe\
 \x89\

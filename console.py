@@ -10,6 +10,7 @@ try:
 except:
     FONT = "slant"
 
+# __version__ = "v3.0.1 | 26.01.2026"
 
 def chech_version() -> bool | str:
     version = f"{cfg.version}"
@@ -139,8 +140,9 @@ def wiki_menu() -> None:
 
 
 def help_menu() -> None:
-    pass
-
+    link = cfg.wiki_link
+    text = str(cfg.help_text).replace("<link>", link)
+    print(text)
 
 def info_menu() -> None:
     try:

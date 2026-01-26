@@ -1,5 +1,7 @@
 import json
 
+# __version__ = "v3.0.1 | 26.01.2026"
+
 with open(r"files\config\bot.json", "r", encoding='utf-8') as file:
     data_bot = json.load(file)
 
@@ -87,6 +89,7 @@ git = "https://github.com/Sk1lizz/switch_site"
 font = data_console["font"]
 name_console = data_console["name"]
 
+
 # Сообщение из консоли
 data_message_console = data_lang["main-body"]
 
@@ -104,6 +107,7 @@ info_menu_message = console_message["info-menu"]
 exit_message = console_message["exit"]
 end_message = console_message["end"]
 request_message = console_message["request"]
+help_text = console_message["help-text"]
 
 
 switch_menu_setting = data_message_console["switch-menu-message"]

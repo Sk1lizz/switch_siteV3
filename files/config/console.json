@@ -1,5 +1,6 @@
 {
     "name": "Switch Site",
     "font": "slant",
-    "check_version": true
+    "check_version": true,
+    "__version__": "v3.0.1 | 26.01.2026"
 }

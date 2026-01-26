@@ -13,6 +13,8 @@ from aiogram.enums import ParseMode
 from aiogram.filters import Command, CommandStart
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+# __version__ = "v3.0.1 | 26.01.2026"
+
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 dp = Dispatcher()
@@ -249,8 +251,9 @@ async def main() -> None:
     await dp.start_polling(bot)
 
 
-try:
-    #logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    asyncio.run(main())
-except:
-    print("INFO:Bot Stop.")
+def main_bot() -> None:
+    try:
+        #logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+        asyncio.run(main())
+    except:
+        print("INFO:Bot Stop.")

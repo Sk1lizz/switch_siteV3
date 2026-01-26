@@ -18,7 +18,7 @@ sitelist_split = sitelist_text.split("\n")
 for i in range(1, (len(sitelist_split)-1)):
     sitelist_i.append(sitelist_split[i])
 
-
+# __version__ = "v3.0.1 | 26.01.2026"
 
 class Program(QMainWindow):
     page = 1 
@@ -330,9 +330,10 @@ class Program(QMainWindow):
             #print(self.get_program())
             #print()
 
-app = QApplication(sys.argv)
+def main_app() -> None:
+    app = QApplication(sys.argv)
 
-window = Program()
-window.show()
+    window = Program()
+    window.show()
 
-sys.exit(app.exec())
+    sys.exit(app.exec())

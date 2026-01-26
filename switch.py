@@ -3,6 +3,8 @@ import json
 import config as cfg
 
 
+# __version__ = "v3.0.1 | 26.01.2026"
+
 def get_path() -> str: # Функция для определения пути к файлу
     """Узнаем систему и возвращаем путь"""
     if platform.system() == "Windows":

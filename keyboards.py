@@ -1,6 +1,7 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 import config as cfg
 
+# __version__ = "v3.0.1 | 26.01.2026"
 
 main_keyboard = InlineKeyboardBuilder()
 
